@@ -1,7 +1,9 @@
 <header class="header">
   <nav>
     <a routerLink="/" routerLinkActive="active">Home</a>
-    <a routerLink="/cart" routerLinkActive="active">Cart</a>
+    <a routerLink="/cart" routerLinkActive="active">
+      Cart <span class="cart-count" *ngIf="cartService.cart.length > 0">({{ cartService.cart.length }})</span>
+    </a>
     <a routerLink="/contact" routerLinkActive="active">Contact</a>
   </nav>
   <div class="auth">

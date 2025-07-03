@@ -1,12 +1,23 @@
 <div class="cart">
   <h2>Your Cart</h2>
   <div *ngIf="cartService.cart.length === 0">Cart is empty.</div>
-  <div *ngFor="let item of cartService.cart">
-    <div class="cart-item">
-      <img [src]="item.image" alt="{{ item.name }}">
-      <span>{{ item.name }}</span>
-      <span>${{ item.price }}</span>
-      <button (click)="cartService.removeFromCart(item)">Remove</button>
+  <div *ngIf="cartService.cart.length > 0">
+    <div class="cart-products">
+      <div *ngFor="let item of cartService.cart" class="cart-item">
+        <img [src]="item.image" alt="{{ item.name }}">
+        <span>{{ item.name }}</span>
+        <span>${{ item.price }}</span>
+        <button (click)="cartService.removeFromCart(item)">Remove</button>
+      </div>
+    </div>
+    <div class="cart-summary">
+      <h3>Products in Cart:</h3>
+      <ul>
+        <li *ngFor="let item of cartService.cart">
+          <img [src]="item.image" alt="{{ item.name }}" width="30" height="30" style="vertical-align:middle; margin-right:8px;">
+          {{ item.name }} - ${{ item.price }}
+        </li>
+      </ul>
     </div>
   </div>
 </div>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { CartService } from './cart.service';
 
 @Component({
   selector: 'app-header',
@@ -13,6 +14,8 @@ export class HeaderComponent {
   username = '';
   showLogin = false;
   showSignup = false;
+
+  constructor(public cartService: CartService) {}
 
   ngOnInit() {
     const user = localStorage.getItem('user');

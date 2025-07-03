@@ -2,7 +2,7 @@
   <nav>
     <a routerLink="/" routerLinkActive="active">Home</a>
     <a routerLink="/cart" routerLinkActive="active">
-      Cart <span class="cart-count" *ngIf="cartService.cart.length > 0">({{ cartService.cart.length }})</span>
+      Cart <span class="cart-count" *ngIf="cartService.getCartCount() > 0">({{ cartService.getCartCount() }})</span>
     </a>
     <a routerLink="/contact" routerLinkActive="active">Contact</a>
   </nav>

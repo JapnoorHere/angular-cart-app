@@ -11,4 +11,16 @@ import { CartService } from './cart.service';
 })
 export class CartComponent {
   constructor(public cartService: CartService) {}
+
+  getTotal(): number {
+    return this.cartService.getCartTotal();
+  }
+
+  increaseQuantity(item: any) {
+    this.cartService.updateQuantity(item.id, (item.quantity || 1) + 1);
+  }
+
+  decreaseQuantity(item: any) {
+    this.cartService.updateQuantity(item.id, (item.quantity || 1) - 1);
+  }
 }

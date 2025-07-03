@@ -1,0 +1,20 @@
+<header class="header">
+  <nav>
+    <a routerLink="/" routerLinkActive="active">Home</a>
+    <a routerLink="/cart" routerLinkActive="active">Cart</a>
+    <a routerLink="/contact" routerLinkActive="active">Contact</a>
+  </nav>
+  <div class="auth">
+    <span *ngIf="isLoggedIn">Welcome, {{ username }} <button (click)="logout()">Logout</button></span>
+    <button *ngIf="!isLoggedIn" (click)="showLogin = !showLogin">Login</button>
+    <button *ngIf="!isLoggedIn" (click)="showSignup = !showSignup">Signup</button>
+    <div *ngIf="showLogin">
+      <input #loginUser type="text" placeholder="Username">
+      <button (click)="login(loginUser.value)">Login</button>
+    </div>
+    <div *ngIf="showSignup">
+      <input #signupUser type="text" placeholder="Username">
+      <button (click)="signup(signupUser.value)">Signup</button>
+    </div>
+  </div>
+</header>

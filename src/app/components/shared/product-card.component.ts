@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CartService } from './cart.service';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-product-card',
@@ -9,6 +9,7 @@ import { CartService } from './cart.service';
   templateUrl: './product-card.component.html',
   styleUrls: ['./product-card.component.css'],
 })
+
 export class ProductCardComponent {
   @Input() product: any;
 

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProductCardComponent } from './product-card.component';
+import { ProductCardComponent } from '../components/shared/product-card.component';
 
 @Component({
   selector: 'app-home',
@@ -31,8 +31,7 @@ export class HomeComponent {
       id: 3,
       name: 'Laptop Stand',
       price: 45,
-      image:
-        'https://m.media-amazon.com/images/I/8199s2tKUuL._AC_SL1500_.jpg',
+      image: 'https://m.media-amazon.com/images/I/8199s2tKUuL._AC_SL1500_.jpg',
       description: 'Ergonomic aluminum laptop stand for better posture',
     },
     {
@@ -56,7 +55,7 @@ export class HomeComponent {
       name: 'Desk Lamp',
       price: 65,
       image:
-        'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop',
+        'https://www.bing.com/th?id=OPAC.s2wRhh8DXVPmyg474C474&o=5&pid=21.1&w=148&h=260&rs=1&qlt=100&dpr=1.1&bw=6&bc=FFFFFF',
       description: 'LED desk lamp with adjustable brightness and color',
     },
   ];

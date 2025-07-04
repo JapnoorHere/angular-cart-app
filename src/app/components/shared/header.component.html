@@ -1,0 +1,19 @@
+<header class="header">
+  <nav>
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+    <a routerLink="/cart" routerLinkActive="active">
+      Cart <span class="cart-count" *ngIf="cartService.getCartCount() > 0">{{ cartService.getCartCount() }}</span>
+    </a>
+    <a routerLink="/contact" routerLinkActive="active">Contact</a>
+  </nav>
+  <div class="auth">
+    <div *ngIf="isLoggedIn" class="user-info">
+      <span>Welcome, {{ username }}</span>
+      <button (click)="logout()" class="btn-logout">Logout</button>
+    </div>
+    <div *ngIf="!isLoggedIn" class="auth-buttons">
+      <button (click)="goToLogin()" class="btn-auth">Login</button>
+      <button (click)="goToSignup()" class="btn-auth">Sign Up</button>
+    </div>
+  </div>
+</header>
